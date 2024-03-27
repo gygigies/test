@@ -1,5 +1,5 @@
 export default async function removeReservation(token:string, reviewId: string) {
-    const response = await fetch(`http://localhost:5000/api/v1/reviews/${reviewId}`, {
+    const response = await fetch(`https://backendtest-five.vercel.app/api/v1/reviews/${reviewId}`, {
         method: "DELETE",
         headers: {
             "authorization" : `Bearer ${token}`
