@@ -13,7 +13,7 @@ export default function TopMenu () {
             <div className={styles.containercenter}>
                 <TopMenuItem title="HOME" pageRef="/"/>
               
-                <TopMenuItem title="REVIEW" pageRef="/review"/>
+                <TopMenuItem title="REVIEW" pageRef="/myreview"/>
 
                 <TopMenuItem title="RESERVE" pageRef="/myreservation"/>
             </div>

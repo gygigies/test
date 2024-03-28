@@ -17,19 +17,20 @@ export default async function ReviewList({reviewsJson}: {reviewsJson: ReviewJson
     const reviewsItem = await reviewsJson
 
     return (
-        <main className={styles.page}>
+        <main className={styles.pages}>
         <>
         { reviewsItem.data.length === 0 ? (
-            <div className="text-xl text-center">No Table  </div>
+            <div className="text-xl text-center text-white">No Review  </div>
         )
         :
         (
             reviewsItem.data.map((reviewItem: any) => (
-                <div className="bg-slate-600 rounded px-5 mx-5 py-5 my-6"
+                <div className="bg-slate-600 rounded px-5 mx-5 py-5 my-3"
                     key = { reviewItem._id }>
-                        <div className="text-md">Rating: <Rating name="rating" 
+                        <div className="text-md text-white">Restaurant: {reviewItem.restaurant.name} </div>
+                        <div className="text-md text-white">Rating: <Rating name="rating" 
                     defaultValue={reviewItem.rating} precision={0.5} readOnly /></div>
-                        <div className="text-md">Description: {reviewItem.description} </div>
+                        <div className="text-md text-white">Description: {reviewItem.description} </div>
                         <CancelReview reviewId={reviewItem._id}/>
                 </div>
             ))

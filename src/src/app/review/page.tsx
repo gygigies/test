@@ -30,7 +30,7 @@ const SigninPage: React.FC = () => {
             if (!response.ok) {
                 throw new Error('Failed to create review');
             }
-            window.location.href = 'http://localhost:3000/'
+            window.location.href = '/'
         } catch (error) {
             console.log(error);
             console.log('fail');

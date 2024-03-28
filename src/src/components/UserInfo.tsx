@@ -13,7 +13,7 @@ export default function UserInfo() {
 
     const handleSignOut = async () => {
         await signOut({ redirect: false, callbackUrl: '/' });
-        window.location.href = 'http://localhost:3000/'
+        window.location.href = '/'
     };
 
     return (

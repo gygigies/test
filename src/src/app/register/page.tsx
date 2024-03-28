@@ -26,7 +26,7 @@ const SigninPage: React.FC = () => {
             if (!response.ok) {
                 throw new Error('Failed to register');
             }
-            window.location.href = 'http://localhost:3000/signin'
+            window.location.href = '/signin'
         } catch (error) {
             console.log(error);
             setError("Email already used or password must be at least 6 characters. Please try again.");

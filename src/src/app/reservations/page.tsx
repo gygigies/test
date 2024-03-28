@@ -25,6 +25,7 @@ export default function ReservationPage () {
     const restaurant = urlParams.get('restaurant')
     const {data: session} = useSession()
     const id = session?.user.data._id;
+    const [error, setError] = useState<string | null>(null);
 
     const addReservations = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -48,8 +49,9 @@ export default function ReservationPage () {
             if(!response.ok) {
                 throw new Error("Failed to make reserve")
             }
+            window.location.href = '/'
         }catch(error){
-            console.log(error)
+            setError("You can make reservation only 3 time. Please try again.!");
         }
     }
  
@@ -78,7 +80,9 @@ export default function ReservationPage () {
                 <input name="person" className={styles.inputField} type="number" min={1} max={15} placeholder="Guest Number"/>
                 <input name="tel" className={styles.inputField} placeholder="Telephone"/>
                 </div>
-                
+                {
+                    error && <div className="text-red-500">{error}</div>
+                }
                 <button type="submit" className={styles.reserveButton} name = "Book Table">
                     Confirm
                 </button>

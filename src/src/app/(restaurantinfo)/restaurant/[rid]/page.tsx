@@ -7,6 +7,7 @@ import { useSession } from "next-auth/react"
 
 export default async function RestaurantDetailPage( {params} : {params: {rid:string}}) {
     const restaurantDetail = await getRestaurant(params.rid)
+    console.log(restaurantDetail)
     return(
         <main className={styles.page}>
             <div className={styles.content}>
